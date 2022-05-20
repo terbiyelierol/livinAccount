@@ -39,14 +39,15 @@
 
 # 🛰 FUTURE OF THE PROJECT
 
-- to play the game with the different screen sizes
-- to add new features before starts the game
-- to create a board to compare the scores
+- to add more charts by date, supplier name etc.
+- to add customer and revenue routes
+- to add monthly reports
+- to email the pdf reports to the user
 
-# CREDITS
+
+# 🙏 CREDITS
 
 <ul>
-<li>Background Music supported by <a href="https://en.wikipedia.org/wiki/The_Cinematic_Orchestra">The Cinematic Orchestra</a></li>
-<li>Audio Effects:<a href="https://www.zapsplat.com/"> ZapSlat</a></li>
-<li>Background Image:<a href="https://www.freepik.com/"> FreePik</a></li>
+
+<li>Images:<a href="https://undraw.co/"> Undraw</a></li>
 </ul>
