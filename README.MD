@@ -17,7 +17,7 @@
 <img src="ReadMe_images/expenses_page.png">
 
 
-# 🤖TECHNOLOGIES USED
+# 🤖 TECHNOLOGIES USED
 
 - HTML
 - CSS
