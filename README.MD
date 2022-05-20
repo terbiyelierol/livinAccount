@@ -10,8 +10,8 @@
 
 # 🤳 SCREENSHOTS
 
-<img src="ReadMe_images/userPage.png">
 <img src="ReadMe_images/landing_page.png">
+<img src="ReadMe_images/userPage.png">
 <img src="ReadMe_images/quoteAPI.png">
 <img src="ReadMe_images/supplier_page.png">
 <img src="ReadMe_images/expenses_page.png">
