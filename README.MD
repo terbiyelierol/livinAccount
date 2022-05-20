@@ -6,7 +6,7 @@
 
 <p>There are more web app examples outside for the self-employed bookkeeping options;however, LivinAccount will be worth to try</p>
 
-<p>You will be able to create your own suppliers, expenses and you can read a quote from one of the important people in the world</p>
+<p>You will be able to create your own suppliers, expenses, email to your supplier to keep them posted that you have recorded their invoices and you can read a quote from one of the important people in the world</p>
 
 # 🤳 SCREENSHOTS
 
