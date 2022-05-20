@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+  <body>
+
+    <!-- NAV BAR	 -->
+<%- include('../partials/nav.ejs') %>  
+      
+
+<!-- LEFT SIDEBAR	 -->
+<%- include('../partials/sidenav.ejs') %>
+
+<div class="row form-expense">
+  <form action="/expense/<%= expense._id %>?_method=PUT" method="POST" class="col s8  offset-m3 z-depth-3 grey lighten-2" style="padding-top: 15px;" >
+    <div class="row">
+      <div class="input-field col s3">
+        <select class="blue-text text-darken-2" name="supplier" required>
+          <option value="" disabled selected >Suppliers</option>
+          <% for (let i=0; i< supplier.length; i++){ %>
+          <option class="blue-text text-darken-2" value="<%= supplier[i]._id%>"><%= supplier[i].fullname %></option>
+          <% } %>
+        </select>
+        <label  for="supplier" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: 14px;">Supplier</label>
+      </div>
+      <div class="input-field col">
+        <input name="expense_date" id="expense_date" type="date" class="validate" value="<%= expense.expense_date %>" required>
+        <label for="expense_date" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: large;">Payment Date</label>
+    </div>
+    
+      <div class="row">
+        <div class="input-field col s3">
+          <select class="blue-text text-darken-2" name="category" required>
+            <option value="<%= expense.category %>" disabled selected >Category</option>
+            <option class="blue-text text-darken-2" value="Advertising">Advertising</option>
+            <option value="Meals and entertainment">Meals and entertainment</option>
+            <option  value="Interest and bank charges">Interest and bank charges</option>
+            <option  value="Insurance">Insurance</option>
+            <option  value="Interest and bank charges">Interest and bank charges</option>
+            <option  value="Business taxes, licences, and memberships">Business taxes, licences, and memberships</option>
+            <option  value="Office expenses">Office expenses</option>
+            <option  value="Office stationery and supplies">Office stationery and supplies</option>
+            <option  value="Professional fees (includes legal and accounting fees)">Professional fees (includes legal and accounting fees)</option>
+            <option  value="Rent">Rent</option>
+            <option  value="Utilities">Utilities</option>
+            <option  value="Bad debts">Other expenses</option>
+          </select>
+          <label  for="category" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: 14px;">Category</label>
+        </div>
+        <div class="input-field col s3">
+          <input placeholder="description" id="description" name="description" type="text" class="validate" value="<%= expense.description %>" required>
+          <label for="description" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: large;">Description</label>
+        </div>
+        <div class="input-field col s2">
+          <input placeholder="amount" id="amount" name="amount" type="number" class="validate" value="<%= expense.amount %>" required>
+          <label for="amount" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: large;">Amount</label>
+        </div>
+        <div class="input-field col s2 m2" >
+          <select name="rate" id="taxRate" required>
+            <option value="<%= expense.rate %>" disabled selected >Tax Rate</option>
+            <option class="rate light-blue-text text-darken-4" value="0">%0</option>
+            <option class="rate light-blue-text text-darken-4" value="0.05">GST-%5</option>
+            <option class="rate light-blue-text text-darken-4" value="0.13">HST-%13</option>
+          </select>
+          <label  for="rate" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: 14px;">Tax Rate</label>
+        </div>
+      </div>
+    </div>
+      <button class="left btn light-blue-text text-darken-4 grey lighten-2 z-depth-4" type="submit" name="action">Save
+        <i class="material-icons right">drive_file_move</i>
+      </button><br><br>
+
+
+      <!-- TOTAL -->
+      
+    <div class="row total">
+      <div class="col center offset-m7 light-blue-text text-darken-4" style="font-weight: bold;">
+        <div class="col right light-blue-text text-darken-4" style="font-weight: bold;">SubTotal: <span id="subtotal">0.00</span></div>
+      </div>
+      <div class="col center offset-m7 light-blue-text text-darken-4" style="font-weight: bold;">
+        <div class="col right light-blue-text text-darken-4" style="font-weight: bold;">Tax: <span id="tax" >0.00</span></div>
+      </div>
+      <div class="col center offset-m7 light-blue-text text-darken-4" style="font-weight: bold;">
+        <div class="col right light-blue-text text-darken-4" style="font-weight: bold;">Total: <span id="total" >0.00</span></div>
+      </div>
+    </div>
+  </form>
+</div>
+<script src="/javascripts/expense.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+     <!-- NAV BAR	 -->
+  <%- include('../partials/nav.ejs') %>  
+
+<!-- LEFT SIDEBAR	 -->
+<%- include('../partials/sidenav.ejs') %>
+
+  <a href="/expense/add" class="right light-blue darken-4 btn-large" style="font-weight: bold; border-radius: 5px;"><i style="font-weight: bold;" class="material-icons right">add</i>New Expense</a>
+
+
+<div class="container">
+  <table class="striped centered light-blue-text text-darken-4 grey lighten-2 z-depth-4">
+    <thead>
+      <tr>
+          <th>Expense Date</th>
+          <th>Supplier</th>
+          <th>Expense Category</th>
+          <th>Total</th>
+          <th>Edit</th>
+          <th>Delete</th>
+      </tr>
+      <tbody>
+        <% for (let i=0; i< expenseSup.length; i++){ %>
+        <tr>
+          <td><%= expenseSup[i].expense_date.toISOString().slice(0, 10) %></td>
+          <td><%= expenseSup[i].supplier.fullname %></td>
+          <td><%= expenseSup[i].category %></td>
+          <td><%= (expenseSup[i].amount*expenseSup[i].rate)+expenseSup[i].amount %></td>
+          <td><a href="/expense/<%= expenseSup[i]._id %>/edit"class="grey lighten-2 btn-small"><span class="material-icons light-blue-text text-darken-4">
+            edit
+            </span></a></td>
+            <form action="/expense/<%= expenseSup[i]._id %>?_method=DELETE" method="POST">
+          <td><button class="grey lighten-2 btn-small"><span class="material-icons light-blue-text text-darken-4">
+            delete
+            </span></button></td>
+          </form>
+        </tr>
+        <% } %>
+      </tbody>
+    </thead>
+  </table>
+</div>
+  </body>
+</html>

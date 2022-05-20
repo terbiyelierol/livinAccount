@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <header class="index">
+      <nav class="nav-wrapper grey lighten-2">
+        <div class="container">
+          <a href="#" class="brand-logo light-blue-text text-darken-4"
+            >LivinAccount</a
+          >
+          <a
+            href=""
+            class="sidenav-trigger light-blue-text text-darken-4"
+            data-target="mobile-menu"
+          >
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a
+                href="#photos"
+                class="tooltipped light-blue-text text-darken-4 btn grey lighten-2 z-depth-3"
+                data-tooltip="About Us"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="/auth/google"
+                class="tooltipped light-blue-text text-darken-4 btn grey lighten-2 z-depth-3"
+                data-tooltip="Log-In"
+                ><span class="material-icons"> login </span></a
+              >
+            </li>
+          </ul>
+          <ul class="sidenav grey lighten-2" id="mobile-menu">
+            <li>
+              <a href="#photos" class="light-blue-text text-darken-4">About Us</a>
+            </li>
+            <li><a href="/auth/google" class="light-blue-text text-darken-4">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="container section" id="photos" >
+      <div class="row">
+        <div class="col s12 l3">
+          <img
+            src="../images/undraw_calculator_re_alsc.svg"
+            alt=""
+            class="responsive-img"
+          />
+        </div>
+        <div class="col s12 l6 offset-l3">
+          <h2 class="light-blue-text text-darken-4">
+            Self Employed Bookkeping
+          </h2>
+          <p>
+            LivinAccount's service and dedication are to improve our
+            self-employed clients bookkeeping procedures and process to
+            demonstrate them their numbers in an understandable way.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="right col s12 l3 offset-l1">
+          <img
+            src="../images/undraw_revenue_re_2bmg.svg"
+            alt=""
+            class="responsive-img"
+          />
+        </div>
+        <div class="col s12 l6">
+          <h2 class="light-blue-text text-darken-4">
+            Expense & Revenue Tracking
+          </h2>
+          <p>
+            LivinAccount provides a different solution to its clients to track
+            their invoices and receipts. They will be more aware after using
+            LivinAccount Self-Employed Bookkeping application
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer footer-copyright grey darken-4">
+      <div class="container left-align">
+        &copy; 2022 LivinAccount &#124;
+        <a
+          href="https://github.com/terbiyelierol/livinaccount" target="_blank"
+          class="btn-floating grey darken-4"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        &#124;
+        <a
+          href="#"
+          class="btn-floating grey darken-4"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
+

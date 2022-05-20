@@ -1,0 +1,30 @@
+<header>
+  <nav class="nav-wrapper grey lighten-2">
+    <div class="container">
+      <div class="center brand-logo light-blue-text text-darken-4"
+        >LivinAccount</div>
+      <a
+        href=""
+        class="sidenav-trigger light-blue-text text-darken-4"
+        data-target="mobile-menu"
+      >
+        <i class="material-icons">settings</i>
+      </a>
+      <a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up light-blue-text text-darken-4"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a
+            href="/"
+            class="tooltipped light-blue-text text-darken-4 btn grey lighten-2 z-depth-3"
+            data-tooltip="Log-Out"
+            ><span class="material-icons"> logout </span></a>
+        </li>
+        <li class="light-blue-text text-darken-4"><%= user.name %></li>
+      </ul>
+      <ul class="sidenav grey lighten-2" id="mobile-menu">
+        <li>
+          <a href="/" class="light-blue-text text-darken-4">Log-out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

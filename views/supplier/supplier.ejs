@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+  <!-- NAV BAR	 -->
+  <%- include('../partials/nav.ejs') %>
+    
+
+<!-- LEFT SIDEBAR	 -->
+<%- include('../partials/sidenav.ejs') %>
+
+<a href="/supplier/add" class="right light-blue darken-4 btn-large" style="font-weight: bold; border-radius: 5px;"><i style="font-weight: bold;" class="material-icons right">add</i>New Supplier</a>
+
+<div class="container">
+<table class="striped centered light-blue-text text-darken-4 grey lighten-2 z-depth-4">
+  <thead>
+    <tr>
+        <th>Supplier Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tbody>
+      <% for (let i=0; i< supplier.length; i++){ %>
+      <tr>
+        <td><%= supplier[i].fullname %></td>
+        <td><%= supplier[i].address %></td>
+        <td><%= supplier[i].email %></td>
+        <td><%= supplier[i].phone %></td>
+        <td><a href="/supplier/<%= supplier[i]._id %>/edit" class="grey lighten-2 btn-small"><span class="material-icons light-blue-text text-darken-4">
+          edit
+          </span></a></td>
+          <form action="/supplier/<%= supplier[i]._id %>?_method=DELETE" method="POST">
+          <td><button class="grey lighten-2 btn-small"><span class="material-icons light-blue-text text-darken-4">
+            delete
+            </span></button></td>
+          </form>
+      </tr>
+      <% } %>
+    </tbody>
+  </thead>
+</table>
+</div>
+    
+  </script>
+</body>
+</html>
