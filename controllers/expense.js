@@ -14,7 +14,11 @@ module.exports = {
 async function show (req,res,next){
   let expenseSup = await Expense.find({createdBy:req.user.id}).populate('supplier')
   let user = await User.findById(req.user._id)
-  res.render('../views/expense/expense.ejs',{title:'Expenses',user:user,expenseSup:expenseSup})
+  let sum = 0
+  for (let i=0;i<expenseSup.length;i++){
+    sum+=expenseSup[i].amount
+  }
+  res.render('../views/expense/expense.ejs',{title:'Expenses',user:user,expenseSup:expenseSup,sum:sum})
 }
 
 async function addExpense (req,res,next){
