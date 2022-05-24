@@ -34,7 +34,7 @@
 
 # 🎭 SHOWCASE
 
-<a href="#" target="_blank">LivinAccount</a>
+<a href="https://livinaccount.herokuapp.com/" target="_blank">LivinAccount</a>
 
 
 # 🛰 FUTURE OF THE PROJECT
