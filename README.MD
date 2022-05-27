@@ -40,7 +40,6 @@
 # 🛰 FUTURE OF THE PROJECT
 
 - to add more charts by date, supplier name etc.
-- to add customer and revenue routes
 - to add monthly reports
 - to email the pdf reports to the user
 

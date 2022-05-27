@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+      <!-- NAV BAR	 -->
+
+  <%- include('../partials/nav.ejs') %>
+        
+
+  <!-- LEFT SIDEBAR	 -->
+  
+  <%- include('../partials/sidenav.ejs') %>
+
+      <div class="row erol" style="padding-top: 10px;">
+        <form action="/customer" method="POST" class="col s12 " >
+          <div class="col s12 m4 offset-m4">
+            <div class="card">
+              <div class="card-action light-blue-text text-darken-4">
+                <h3>Customer Form</h3>
+              </div>
+
+            <div class="card-content">
+
+                <div class="form-field">
+                  <label for="fullname"><i class="material-icons">person</i> Customer Name</label>
+                  <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                </div><br>
+
+                <div class="form-field">
+                  <label for="address"><i class="material-icons">contact_mail</i> Address</label>
+                  <input type="text" id="address" name="address" placeholder="Address" required>
+                </div><br>
+
+                <div class="form-field">
+                  <label for="email"><i class="material-icons">email</i> Email Adress</label>
+                  <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div><br>
+
+                <div class="form-field" >
+                  <label for="phone"><i class="material-icons">call</i> Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                  <small>Format: 123-456-7890</small>
+                </div><br>
+
+                <div class="form-field" >
+                  <label for="business_id"><i class="material-icons">fingerprint</i>Business ID</label>
+                  <input type="text" id="business_id" name="business_id" placeholder="Business ID" required>
+                </div><br>
+
+
+                <div class="form-field">
+                  <button class="btn-large light-blue-text text-darken-4 grey lighten-2 z-depth-3 waves-effect waves-dark" style="width: 100%;">Save</button>
+                </div><br>
+
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </body>
+    </html>

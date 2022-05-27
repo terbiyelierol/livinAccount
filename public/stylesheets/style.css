@@ -26,6 +26,9 @@
 .form-expense{
   margin-top: 250px;
 }
+.form-revenue{
+  margin-top: 250px;
+}
 .total{
   display: flex;
   flex-direction: column;

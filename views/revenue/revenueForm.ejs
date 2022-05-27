@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+  <body>
+
+    <!-- NAV BAR	 -->
+<%- include('../partials/nav.ejs') %>  
+      
+
+<!-- LEFT SIDEBAR	 -->
+<%- include('../partials/sidenav.ejs') %>
+
+<div class="row form-revenue">
+  <form action="/revenue" method="POST" class="col s8  offset-m3 z-depth-3 grey lighten-2" style="padding-top: 15px;" >
+    <div class="row">
+      <div class="input-field col s3">
+        <select class="blue-text text-darken-2" name="customer" required>
+          <option value="" disabled selected >Customers</option>
+          <% for (let i=0; i< customer.length; i++){ %>
+          <option class="blue-text text-darken-2" value="<%= customer[i]._id %>"><%= customer[i].fullname %></option>
+          <% } %>
+        </select>
+        <label  for="customer" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: 14px;">Customer</label>
+      </div>
+
+      <div class="input-field col">
+        <input name="revenue_date" id="revenue_date" type="date" class="validate" required>
+        <label for="revenue_date" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: large;">Date</label>
+    </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+          <input placeholder="category" id="category" name="category" type="text" class="validate" required>
+          <label  for="category" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: large;">Sales Category</label>
+        </div>
+        <div class="input-field col s3">
+          <input placeholder="description" id="description" name="description" type="text" class="validate" required>
+          <label for="description" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: large;">Description</label>
+        </div>
+        <div class="input-field col s2">
+          <input placeholder="amount" id="amount" name="amount" type="number" class="validate" required>
+          <label for="amount" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: large;">Amount</label>
+        </div>
+        <div class="input-field col s2 m2" >
+          <select id="taxRate"name="rate" required>
+            <option value="" disabled selected >Tax Rate</option>
+            <option class="rate light-blue-text text-darken-4" value="0.05">GST-%5</option>
+            <option class="rate light-blue-text text-darken-4" value="0.13">HST-%13</option>
+          </select>
+          <label  for="rate" class="light-blue-text text-darken-4"style="font-weight: bold;font-size: 14px;">Tax Rate</label>
+        </div>
+      </div>
+    </div>
+      <button class="left btn light-blue-text text-darken-4 grey lighten-2 z-depth-4" type="submit" name="action">Save
+        <i class="material-icons right">drive_file_move</i>
+      </button><br><br>
+
+      <!-- TOTAL -->
+      
+    <div class="row total">
+      <div class="col center offset-m7 light-blue-text text-darken-4" style="font-weight: bold;">
+        <div class="col right light-blue-text text-darken-4" style="font-weight: bold;">SubTotal: <span id="subtotal">0.00</span></div>
+      </div>
+      <div class="col center offset-m7 light-blue-text text-darken-4" style="font-weight: bold;">
+        <div class="col right light-blue-text text-darken-4" style="font-weight: bold;">Tax: <span id="tax" >0.00</span></div>
+      </div>
+      <div class="col center offset-m7 light-blue-text text-darken-4" style="font-weight: bold;">
+        <div class="col right light-blue-text text-darken-4" style="font-weight: bold;">Total: <span id="total" >0.00</span></div>
+      </div>
+    </div>
+  </form>
+</div>
+<script src="/javascripts/revenue.js"></script>
+  </body>
+</html>
