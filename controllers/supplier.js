@@ -1,5 +1,6 @@
 let User = require('../models/user');
 let Supplier = require('../models/supplier');
+let Expense = require('../models/expense');
 var nodemailer = require('nodemailer')
 
 module.exports = {
@@ -69,6 +70,8 @@ async function create (req, res, next) {
 
 async function deleteSupplier(req, res) {
   let supplier = await Supplier.findByIdAndDelete(req.params.id)
+  let expense = await Expense.deleteMany({supplier:{$in:[supplier._id]}})
+  console.log(expense)
   res.redirect('/supplier')
 }
 

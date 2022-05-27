@@ -1,5 +1,6 @@
 let User = require('../models/user');
 let Customer = require('../models/customer');
+let Revenue = require('../models/revenue');
 var nodemailer = require('nodemailer')
 
 module.exports = {
@@ -68,7 +69,8 @@ async function create (req, res, next) {
 }
 
 async function deleteCustomer(req, res) {
-  let customer = await Customer.findByIdAndDelete(req.params.id)
+  let customer = await Customer.findByIdAndDelete(req.params.id)  
+  let revenue = await Revenue.deleteMany({customer:{$in:[customer._id]}})
   res.redirect('/customer')
 }
 
